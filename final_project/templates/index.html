@@ -1,19 +1,57 @@
 <html>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="./static/mywebscript.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+
+    * {
+        font-family: 'Fira Sans', sans-serif;
+    }
+
+    #btn-to-french:hover {
+        color: white;
+    }
+</style>
+<div class="container mb-3 text-body-tertiary">
     <div class="card">
-    <div class="card-body">
-        <div class="mb-3">
-            <label class="form-label">Text to be translated</label>
-            <input type="textarea" class="form-control" id="textToTranslate">
+        <div class="card-header">
+            <h3 class="card-title text-body-tertiary fs-2"><span class="text-body-secondary fs-1">Translator:</span>
+                English
+                &leftrightharpoons; French
+            </h3>
         </div>
-    
-        <div style="padding: 25px 25px 25px 25px;">
-            <button onclick="translateToFrench()" class="btn btn-secondary">Translate to French</button>        
-            <button onclick="translateToEnglish()" class="btn btn-secondary">Translate to English</button>        
+
+        <div class="card-body">
+            <label class="form-label fw-bold">Text to be
+                translated:</label>
+            <div class="row row-cols-2">
+                <div class="col-10 mb-3">
+
+                    <textarea class="form-control" id="textToTranslate" placeholder="Sample text ..."></textarea>
+                </div>
+
+                <div class="col-2 mb-3">
+                    <button id="btn-to-french" onclick="translateToFrench()"
+                        class="btn btn-outline-dark rounded-pill fw-bold mb-1">Translate to
+                        French</button>
+                    <button onclick="translateToEnglish()"
+                        class="btn btn-outline-secondary rounded-pill fw-bold">Translate
+                        to
+                        English</button>
+                </div>
+            </div>
+
+            <p class="fw-bold mb-0">Translated text:</p>
+            <div id="translated_text">
+                <!-- Translated text will show up here -->
+            </div>
         </div>
-    
-        <div id="translated_text" style="padding: 25px 25px 25px 25px;"></div>
+        <div class="card-footer text-center">
+            <small>Developed with Watson-AI from IBM-&copy;</small>
         </div>
-  </div>
+    </div>
+</div>
+<script src="./static/mywebscript.js"></script>
+
 </html>
